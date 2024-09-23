@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi pagina Web</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #76ffa4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #0fbae7;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            
+        }
+        section {
+            padding: 20px;
+            margin: 10px;
+            background-color: white;
+            border-radius: 5px;
+        }
+        .section-title {
+            color: #333;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        ul, ol {
+            padding-left: 20px;
+        }
+        img {
+            width: 150px;
+            height: auto;
+            border-radius: 50%;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #0fbae7;
+            color: white;
+            margin-top: 20px;
+        }
+        a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    
+<style>
+/* Estilos del carrusel */
+.carousel {
+    position: relative;
+    width: 600px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.slides img {
+    width: 50%;
+    height: auto;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+/* Posicionamiento de las diapositivas según el radio seleccionado */
+#slide1:checked ~ .slides {
+    transform: translateX(0%);
+}
+#slide2:checked ~ .slides {
+    transform: translateX(-100%);
+}
+#slide3:checked ~ .slides {
+    transform: translateX(-200%);
+}
+#slide4:checked ~ .slides {
+    transform: translateX(-300%);
+}
+
+/* Navegación con puntos */
+.navigation {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.nav-dot {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin: 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+input[type="radio"]:checked + .nav-dot {
+    background-color: #333;
+}
+
+/* Estilos para el texto del lugar */
+.carousel-text {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#slide1:checked ~ .carousel-text #location-text {
+    content: "Tijuana, México";
+}
+#slide2:checked ~ .carousel-text #location-text {
+    content: "Oaxaca, México";
+}
+#slide3:checked ~ .carousel-text #location-text {
+    content: "Ciudad de México, México";
+}
+#slide4:checked ~ .carousel-text #location-text {
+    content: "Toluca, México";
+}
+</style>
+    
+    
+</head>
+<body>
+
+<header>
+    <h1>Sobre mi</h1>
+</header>
+
+<section>
+    <h2 class="section-title">Datos Personales</h2>
+    <p><strong>Nombre:</strong> Diego Armando Pérez Huerta</p>
+    <p><strong>Edad:</strong> 21 años</p>
+    <p><strong>Email:</strong> <a href="mailto:juan.perez@email.com">diegoarmandopehu@gmail.com</a></p>
+</section>
+
+<section>
+    <h2 class="section-title">Trayectoria Escolar</h2>
+    <ul>
+        <li>Bachillerato - Bachillerato Universitario Simon Bolivar Tehuacan</li>
+        <li>Licenciatura en Ingeniería Sistemas Computacionales - Instituto de Estudios Superiores del Estado</li>
+        
+    </ul>
+</section>
+
+<section>
+    <h2 class="section-title">CV Resumido</h2>
+    
+    <!-- Foto personal -->
+    <img src="foto.jpg" alt="Foto" style="width:150px; height:auto; border-radius:50%; float:right; margin:0 0 20px 20px;">
+
+    <p>Profesional con 3 años de experiencia en programación, con habilidades en lenguajes de alto nivel. Apasionado por el desarrollo de apps y web, y orientado a resultados.</p>
+    
+    <h3>Educación</h3>
+    <ul>
+        <li>Ing. Sistemas Computacionales – Instituto de Estudios Superiores del Estado 2026</li>
+    </ul>
+    
+    <h3>Experiencia Laboral</h3>
+    <ul>
+        <li>Mapeto's Restaurant - Cajero (2016-2017)</li>
+    </ul>
+    
+    <h3>Habilidades</h3>
+    <ul>
+        <li>Manejo de SQL Server</li>
+        <li>Desarrollo web con PHP</li>
+        <li>HTML/CSS</li>
+        <li>Manejo de C# .Net</li>
+        <li>Trabajo en equipo</li>
+        <li>Capacidad para trabajar bajo presión</li>
+        <li>Resolución de problemas</li>
+        <li>Liderazgo</li>
+    </ul>
+    
+    <h3>Idiomas</h3>
+    <ul>
+        <li>Español: Nativo</li>
+        <li>Inglés: Nivel B1</li>
+    </ul>
+</section>
+
+   <section>
+    <h2 class="section-title">Lugares que he visitado</h2>
+    
+    <!-- Carrusel de imágenes -->
+    <div class="carousel">
+        <input type="radio" id="slide1" name="carousel">
+        <input type="radio" id="slide2" name="carousel">
+        <input type="radio" id="slide3" name="carousel" checked>
+        <input type="radio" id="slide4" name="carousel">
+
+        <div class="slides">
+            <div class="slide">
+                <img src="tijuana.jpeg" alt="Tijuana, México">
+                <p>Tijuana, México</p>
+            </div>
+            <div class="slide">
+                <img src="oaxaca.jpeg" alt="Oaxaca, México">
+                <p>Oaxaca, México</p>
+            </div>
+            <div class="slide">
+                <img src="cdmx.jpeg" alt="Ciudad de México, México">
+                <p>Ciudad de México, México</p>
+            </div>
+            <div class="slide">
+                <img src="toluca.jpeg" alt="Toluca, México">
+                <p>Toluca, México</p>
+            </div>
+        </div>
+
+        <div class="navigation">
+            <label for="slide1" class="nav-dot"></label>
+            <label for="slide2" class="nav-dot"></label>
+            <label for="slide3" class="nav-dot"></label>
+            <label for="slide4" class="nav-dot"></label>
+        </div>
+    </div>
+
+</section>
+    
+    
+    
+    
+    
+    
+
+<section>
+    <h2 class="section-title">Deportes y Animal Favorito</h2>
+    <p>Mi deporte favorito es el fútbol y mi animal favorito es el gato.</p>
+    <img src="gato.jpg" alt="Imagen de un gato" />
+</section>
+
+<section>
+    <h2 class="section-title">Contacto y Redes Sociales</h2>
+    <p>Puedes seguirme en mis redes sociales:</p>
+    <ul>
+                
+        <li>
+            <a href="https://www.linkedin.com/diegoph11" target="_blank">
+                <img src="linkedin-icon.png" alt="LinkedIn" style="width:32px; height:32px; vertical-align:middle;">              
+            </a>
+        </li>
+       <li>
+            <a href="https://www.facebook.com/diegoph11" target="_blank">
+                <img src="facebook-icon.png" alt="Facebook" style="width:32px; height:32px; vertical-align:middle;">              
+            </a>
+        </li>
+         <li>
+            <a href="https://www.instagram.com/armando_p_17" target="_blank">
+                <img src="instagram-icon.png" alt="Instagram" style="width:32px; height:32px; vertical-align:middle;">              
+            </a>
+      
+    </ul>
+</section>
+
+<section>
+    <h2 class="section-title">Música Favorita</h2>
+    <p>Escucha una de mis canciones favoritas:</p>
+    <audio controls>
+        <source src="musica_favorita.mp3" type="audio/mpeg">
+        Tu navegador no soporta la reproducción de audio.
+    </audio>
+</section>
+
+<footer>
+    <p><strong>&copy; 2024 Diego Perez_Hu</strong></p>
+</footer>
+
+</body>
+</html>
